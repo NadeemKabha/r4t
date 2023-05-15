@@ -9,25 +9,26 @@ import { TextInput } from "react-native";
 const Code = ({ navigation }) => {
   const [text, setText] = useState("");
   function handleApply() {
-    fetch("http://10.0.0.11:3000/data")
+    fetch("") ////http://IP:PORT/data
       .then((response) => response.json())
       .then((data) => {
-        const newD=data;
+        const newD = data;
       })
       .catch((error) => console.error(error));
-  
-    fetch("http://10.0.0.11:3000/olddata")
+
+    fetch("") //http://IP:PORT/olddata
       .then((response) => response.json())
       .then((data) => {
         const updatedData = {
-          "plastic":  1,
-          "carton": 1,
-          "organic": 1,
-          "glass": 1,
-          "credits": 0,
+          plastic: 1,
+          carton: 1,
+          organic: 1,
+          glass: 1,
+          credits: 0,
         };
-  
-        return fetch("http://10.0.0.11:3000/olddata", {
+
+        return fetch("", {
+          //http://IP:PORT/olddata
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -43,7 +44,7 @@ const Code = ({ navigation }) => {
       })
       .catch((error) => console.error(error));
   }
-  
+
   return (
     <View style={styles.container}>
       <ImageBackground source={ecoBg} style={styles.background}>
