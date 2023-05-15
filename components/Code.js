@@ -1,23 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, ImageBackground } from "react-native";
 import { SvgUri } from "react-native-svg";
-import TextBox from "./tools/TextBox";
 import Button from "./tools/Button";
 import ecoBg from "../assets/eco_bg.png";
+import { TextInput } from "react-native";
 
 const Code = ({ navigation }) => {
+  const [text, setText] = useState("");
+  function handleApply() {
+    fetch("http://10.0.0.11:3000/data")
+      .then((response) => response.json())
+      .then((data) => {
+        const newD=data;
+      })
+      .catch((error) => console.error(error));
+  
+    fetch("http://10.0.0.11:3000/olddata")
+      .then((response) => response.json())
+      .then((data) => {
+        const updatedData = {
+          "plastic":  1,
+          "carton": 1,
+          "organic": 1,
+          "glass": 1,
+          "credits": 0,
+        };
+  
+        return fetch("http://10.0.0.11:3000/olddata", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedData),
+        })
+          .then((response) => response.json())
+          .then((updatedData) => {
+            console.log(updatedData);
+            navigation.navigate("Main");
+          })
+          .catch((error) => console.error(error));
+      })
+      .catch((error) => console.error(error));
+  }
+  
   return (
     <View style={styles.container}>
       <ImageBackground source={ecoBg} style={styles.background}>
         <Text style={styles.title}>Enter Your Code</Text>
 
         <View style={styles.inputContainer}>
-          <TextBox placeholder="Code" placeholderTextColor="#A0A0A0" />
+          <TextInput
+            placeholder="Code"
+            onChangeText={setText}
+            value={text}
+            placeholderTextColor="#A0A0A0"
+          />
         </View>
 
         <View style={styles.buttonContainer}>
-          <Button onPress={() => navigation.navigate("Main2")} title="Apply" />
+          <Button onPress={() => handleApply()} title="Apply" />
         </View>
       </ImageBackground>
 

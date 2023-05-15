@@ -1,8 +1,1 @@
-{
-    "plastic": 10,
-    "cartoon": 20,
-    "organic": 30,
-    "glass": 40,
-    "credits": 1000
-  }
-  
+{ "plastic": 10, "carton": 12, "organic": 13, "glass": 15, "credits": 17 }

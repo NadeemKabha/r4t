@@ -2,7 +2,6 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import Login from "./components/Login";
 import Main from "./components/Main";
-import Main2 from "./components/Main2";
 import Code from "./components/Code";
 import Map from "./components/Map";
 
@@ -21,7 +20,6 @@ const MyStack = () => {
         />
         <Stack.Screen name="Main" component={Main} />
         <Stack.Screen name="Code" component={Code} />
-        <Stack.Screen name="Main2" component={Main2} />
         <Stack.Screen name="Map" component={Map} />
 
       </Stack.Navigator>

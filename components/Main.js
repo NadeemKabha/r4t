@@ -3,16 +3,16 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native";
 import TextBox from "./tools/TextBox";
 import Button from "./tools/Button";
-import Code from "./Code"
-const data = {
-  plastic: 10,
-  cartoon: 20,
-  organic: 30,
-  glass: 40,
-  credits: 100,
-};
+import Code from "./Code";
+
+let data;
+
+fetch('http://10.0.0.11:3000/olddata')
+      .then((response) => response.json())
+      .then(jsonData => {data = jsonData;});
 
 const Main = ({ navigation }) => {
+  
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
@@ -32,8 +32,8 @@ const Main = ({ navigation }) => {
           <Text style={styles.cardValue}>{data.plastic}</Text>
         </View>
         <View style={styles.card}>
-          <Text style={styles.cardTitle}>Cartoon</Text>
-          <Text style={styles.cardValue}>{data.cartoon}</Text>
+          <Text style={styles.cardTitle}>Carton</Text>
+          <Text style={styles.cardValue}>{data.carton}</Text>
         </View>
         <View style={styles.card}>
           <Text style={styles.cardTitle}>Organic</Text>
