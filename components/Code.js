@@ -5,18 +5,20 @@ import { SvgUri } from "react-native-svg";
 import Button from "./tools/Button";
 import ecoBg from "../assets/eco_bg.png";
 import { TextInput } from "react-native";
+import hostname from "./server";
+
 
 const Code = ({ navigation }) => {
   const [text, setText] = useState("");
   function handleApply() {
-    fetch("") ////http://IP:PORT/data
+    fetch("http://"+hostname+":3000/data") 
       .then((response) => response.json())
       .then((data) => {
         const newD = data;
       })
       .catch((error) => console.error(error));
 
-    fetch("") //http://IP:PORT/olddata
+    fetch("http://"+hostname+":3000/olddata") 
       .then((response) => response.json())
       .then((data) => {
         const updatedData = {
@@ -27,8 +29,7 @@ const Code = ({ navigation }) => {
           credits: 0,
         };
 
-        return fetch("", {
-          //http://IP:PORT/olddata
+        return fetch("http://"+hostname+":3000/olddata", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

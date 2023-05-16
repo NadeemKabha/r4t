@@ -4,15 +4,16 @@ import { TouchableOpacity } from "react-native";
 import TextBox from "./tools/TextBox";
 import Button from "./tools/Button";
 import Code from "./Code";
-
+import hostname from "./server";
 let data;
 
-fetch('http://10.0.0.11:3000/olddata')
-      .then((response) => response.json())
-      .then(jsonData => {data = jsonData;});
+fetch("http://" + hostname + ":3000/olddata")
+  .then((response) => response.json())
+  .then((jsonData) => {
+    data = jsonData;
+  });
 
 const Main = ({ navigation }) => {
-  
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
@@ -48,18 +49,15 @@ const Main = ({ navigation }) => {
         style={styles.mapButton}
         onPress={() => navigation.navigate("Map")}
       >
-
         <Text style={styles.mapButtonText}>Smart-Bin Near Me</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.mapButton}
         onPress={() => navigation.navigate("Code")}
       >
-
         <Text style={styles.mapButtonText}>Enter Code</Text>
       </TouchableOpacity>
 
-      
       <Text style={styles.quote}>
         “The greatest threat to our planet is the belief that someone else will
         save it.”
@@ -127,20 +125,18 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     elevation: 5,
     padding: 10,
-    // alignItems: "center",
-    
+
     justifyContent: "center",
     width: "40%",
     height: 150,
   },
   cardp: {
-    left:25,
+    left: 25,
     backgroundColor: "#FFFFFF",
     borderRadius: 10,
     elevation: 5,
     padding: 10,
-    // alignItems: "center",
-    
+
     justifyContent: "center",
     width: "40%",
     height: 150,
@@ -177,8 +173,8 @@ const styles = StyleSheet.create({
     marginVertical: 30,
     color: "#3D405B",
   },
-  button:{
-    Left:100,
+  button: {
+    Left: 100,
   },
 });
 
