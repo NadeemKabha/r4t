@@ -3,7 +3,16 @@
 # <img align='left' src="https://media2.giphy.com/media/ZYEZPrQrzwb9VwM5LV/giphy.gif?cid=ecf05e47q04gpcac2y8pdnjbcz2wqx421ttysexzlte01r7m&ep=v1_gifs_related&rid=giphy.gif&ct=s" width="40">Recycle for Tomorrow
 
 
-About the project: [R4T](https://github.com/NadeemKabha/r4t/blob/main/R4T-EcoHack.pdf)
+## 🌍 About 
+
+R4T (Recycle for Tomorrow) is an innovative project aimed at encouraging people to recycle their waste through the use of smart bins powered by machine learning. Our primary focus is on developing a user-friendly mobile application that allows individuals to view their recycling data based on the information collected by the smart bins.
+
+In the R4T app, users earn points based on the quantity of items they recycle. These points can later be redeemed for vouchers, discounts, and other rewards. Additionally, the app features a map displaying the locations of smart bins in the user's vicinity and a leaderboard showcasing the user's contacts and their respective points.
+
+To collect recycling data, we utilize smart bins equipped with advanced technology that accurately measures the quantity of each waste category (e.g. plastic: 70, organic: 50 etc.) during the sorting process. To input this data into the app, users will find a unique code on the smart bins, which they can enter to update their recycling information.
+
+Who is it for?
+R4T is primarily designed for individuals who currently do not recycle and dispose of all their waste in regular bins. It also serves as a valuable resource for those who are willing to recycle but lack knowledge about proper sorting and bin placement. R4T simplifies the recycling process, saving users time and providing them with incentives for their efforts.
 
 
 ## :star: Get Started
